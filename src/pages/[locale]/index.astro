@@ -1,0 +1,73 @@
+---
+import Layout from "@/layouts/MainLayout.astro";
+import type { Props as MetadataProps } from '@/components/seo/Metadata.astro';
+import { getLocaleWithFlag, SupportedLocaleArray, translations, type SupportedLocale } from "@/utils/localeUtils";
+
+const { locale } = Astro.params;
+
+const supportedLocale = locale as SupportedLocale
+
+const homeData = await translations[supportedLocale]['home.json']();
+const heroData = homeData['hero'];
+
+const metadata: MetadataProps = {
+  title: 'Astro Template',
+  description: 'Astro Template Description',
+  keywords: ['web agency', 'websites', 'custom websites', 'astro'],
+  creator: 'Creator name',
+  publisher: 'Publisher Name',
+  metadataBase: new URL('https://dashcruisedev.com'),
+  alternates: {
+    canonical: '/en',
+    languages: {
+      en: '/en',
+      de: '/de',
+      pl: '/pl',
+      ro: '/ro',
+    },
+  },
+  openGraph: {
+    url: "https://site-url.com",
+    title: "open-graph-title",
+    description: "open-graph-description",
+	// place og-image.png in public folder
+    image: 'https://site-url.com/og-image.png',
+  },
+  /*  imagesToPreload: {
+    remoteImages: [
+      {
+        href: "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/22218a4e-1efb-43dd-ff1e-562588e15a00/hd1920x1080",
+        alt: "Background Image",
+        media: "(min-width: 640px)"
+      }
+    ]
+  } */
+};
+export async function getStaticPaths(){
+	return SupportedLocaleArray.map((loc) => ({
+		params: { locale: loc }
+	}))
+}
+
+// Only needed if output is set to server in astro.config.mjs
+export const prerender = true;
+// Cache for 1h, serve stale for 60s while revalidating
+Astro.response.headers.set('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=60');
+---
+
+<Layout metadata={metadata}>
+	<div class="w-screen h-screen flex justify-center items-center">
+		<h1 class="text-2xl mr-10">
+			{heroData.header}
+		</h1>
+		<a href=`/${locale}`>
+			{SupportedLocaleArray
+			.filter(loc => loc !== locale)
+			.map((loc, key) => (
+				<a href={`/${loc}`} class="mr-5">
+					{getLocaleWithFlag(loc)}
+				</a>
+			))}
+		</a>
+	</div>
+</Layout>

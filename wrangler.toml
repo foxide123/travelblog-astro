@@ -1,0 +1,6 @@
+name = "astro-template"
+pages_build_output_dir = "dist"
+compatibility_date = "2025-04-24"
+
+[env.production]
+compatibility_flags = [ "nodejs_compat" ]

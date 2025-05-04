@@ -1,0 +1,103 @@
+---
+type AlternateProps = {
+  canonical: string;
+  languages?: Record<string, string>;
+};
+
+type OpenGraphProps = {
+  url: string;
+  title: string;
+  description: string;
+  image: string;
+};
+
+//
+
+type ImageProps = {
+  href: string;
+  alt: string;
+  srcset?: string;
+  sizes?: string;
+  media?: string;
+};
+
+type PreloadImageProps = {
+  remoteImages?: ImageProps[];
+  localImages?: ImageProps[];
+};
+
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string[];
+  creator?: string;
+  publisher?: string;
+  metadataBase?: URL;
+  alternates?: AlternateProps;
+  openGraph?: OpenGraphProps;
+  imagesToPreload?: PreloadImageProps;
+}
+
+const {
+  title,
+  description,
+  keywords,
+  creator,
+  metadataBase,
+  alternates,
+  openGraph,
+  imagesToPreload,
+} = Astro.props;
+
+// Creating String from Array of Keywords
+let keywordsFormatted = keywords ? keywords.join(',') : '';
+
+// CANONICAL LINK
+const canonicalLink = alternates?.canonical
+  ? new URL(alternates.canonical, metadataBase).toString()
+  : '';
+
+// OG Image
+const ogImage = openGraph?.image
+  ? new URL(openGraph?.image, metadataBase)
+  : 'https://dashcruisedev.com/favicon.icon';
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content={creator} />
+<meta name="keywords" content={keywordsFormatted} />
+
+<link rel="canonical" href={canonicalLink} />
+<!-- Alternate Links like https://acme.com/en  -->
+{
+  alternates?.languages &&
+    Object.entries(alternates.languages).map(([lang, href]) => {
+      const alternateHref = new URL(href, metadataBase);
+      return <link rel="alternate" hreflang={lang} href={alternateHref} />;
+    })
+}
+
+<!-- Preload Remote Images -->
+{
+  imagesToPreload?.remoteImages?.map((image) => (
+    <link rel="preload" as={image.alt} href={image.href} media={image.media} />
+  ))
+}
+
+<!-- Facebook Meta Tags -->
+{openGraph?.url && <meta property="og:url" content={openGraph.url} />}
+<meta property="og:type" content="website" />
+{openGraph?.title && <meta property="og:title" content={openGraph?.title} />}
+{openGraph?.description && <meta property="og:description" content={openGraph.description} />}
+<meta property="og:image" content={ogImage} />
+
+<!-- <meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain" content="dashcruisedev.com" />
+<meta property="twitter:url" content="https://dashcruisedev.com" />
+<meta name="twitter:title" content="Web Agency" />
+<meta
+  name="twitter:description"
+  content="Web Agency Offering Custom Websites"
+/>
+<meta name="twitter:image" content="https://dashcruisedev.com/og-image.png" /> -->
