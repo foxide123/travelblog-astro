@@ -1,0 +1,79 @@
+---
+import type { IGPost } from '@/types/ig_post_types';
+
+const { igPosts } = Astro.props;
+const igPostItems = igPosts['posts'];
+---
+
+<div class="caret-transparent py-[120px] w-screen flex justify-center border-2 border-green-500">
+  <div class="custom-section-width flex flex-col items-center border-2 border-red-500">
+    <div class="flex justify-center">
+      {/* YT Embed */}
+      <div class="flex flex-col w-1/2 border-2 border-pink-500">
+        <iframe
+          class="rounded-custom-big"
+          height="495"
+          src="https://www.youtube.com/embed/nJPVTmVmpFs?si=FyfvXrT0Kq_drSlQ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+        <div class="flex mt-4">
+          <p>YouTube</p>
+          <p>12.5K Views</p>
+          <p>Join 140+ Subscribers</p>
+        </div>
+      </div>
+      {/* Header + Description on the Right */}
+      <div class="flex flex-col w-1/2 pl-[110px] justify-center">
+        <h3 class="section-highlight font-normal text-base leading-[150%]">Stay Inspired</h3>
+        <h2 class="mt-2 font-bold text-5xl leading-[120%] tracking-[-1%]">Follow Along The <br /> Adventure</h2>
+        <p class="mt-5">
+          Stay connected with our journey through analog photography and travel.
+          Explore exclusive stories, stunning visuals, and the beauty of film on
+          Instagram and YouTube.
+        </p>
+        <button class="w-fit mt-12 border border-custom-btn-border rounded-custom-small px-8 py-4">Discover More</button>
+      </div>
+    </div>
+    {/* Stay Inspired Posts */}
+    <div class="mt-15 flex flex-col w-full">
+      {/* Instagram Element */}
+      <div class="flex justify-end">
+        <div class="flex items-center border-2 border-green-500">
+          <img width={60} height={60} src="/instagram_icon.svg" />
+          <p class="ml-2">#LostInFrames</p>
+        </div>
+      </div>
+      <div class="mt-6 flex gap-4 w-full">
+        {
+          igPostItems.map((item: IGPost, index: number) => (
+            <div class="w-full relative border-2 border-green-500">
+              <img
+                width={28}
+                height={28}
+                class="absolute top-5 right-5"
+                src="/post_icon.svg"
+              />
+              <div class="rounded-custom-medium overflow-hidden">
+                <img class="object-cover w-full" src={item.imgUrl} />
+              </div>
+              <p class="mt-4 font-normal text-base leading-[150%]">{item.description}</p>
+              <div class="flex">
+                <div class="flex">
+                  <img src="/heart_icon.svg" />
+                  <span class="font-normal text-base leading-[150%]">3,112</span>
+                </div>
+                <div class="flex">
+                  <img src="/comment_icon.svg" />
+                  <span class="font-normal text-base leading-[150%]">107</span>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

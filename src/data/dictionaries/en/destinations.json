@@ -1,0 +1,66 @@
+{
+    "previews": [
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/7466aa34-11c2-4f8a-75b1-72d81b542a00/mobile640x480",
+            "place": "Kyoto",
+            "country": "Japan"
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/48cc4849-43da-43c0-8248-b35bb2e3fc00/mobile640x480",
+            "place": "Dolomites",
+            "country": "Italy"
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/c349b78c-0b49-4d1c-2d6e-2943f04b5700/mobile640x480",
+            "place": "Sahara Desert",
+            "country": ""
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/1903bdb8-1141-4579-eb25-07b43137e300/mobile640x480",
+            "place": "Yosemite",
+            "country": "USA"
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/da772cdf-00ce-4f17-a1c6-fd0822945400/mobile640x480",
+            "place": "Bali",
+            "country": "Indonesia"
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/77e114d9-5249-48ad-7e14-ef47e32f6b00/mobile640x480",
+            "place": "Cancun",
+            "country": "Mexico "
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/bde2c99c-cb6e-4599-c9e4-e9800cf7f000/mobile640x480",
+            "place": "Havana",
+            "country": "Cuba "
+        },
+
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/ee746c3d-7ece-4bcd-dac9-02b50612d900/mobile640x480",
+            "place": "Prague",
+            "country": "Czechia "
+        },
+
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/af745499-4177-4259-9138-174578aace00/mobile640x480",
+            "place": "Venice",
+            "country": "Italy "
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/497bf932-e629-4276-e380-76d4e1051000/mobile640x480",
+            "place": "Lisbon",
+            "country": "Portugal "
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/017537ed-19ef-4bc7-fdbf-0e19ebbf4300/mobile640x480",
+            "place": "Budapest",
+            "country": "Hungary "
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/3d008fd8-86ec-4895-e9d1-cafaa72ed400/mobile640x480",
+            "place": "Marrakech",
+            "country": "MA "
+        }
+    ]
+}

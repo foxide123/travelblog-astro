@@ -1,0 +1,42 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+
+const imgCollection = [
+    'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/92480e63-ef59-4689-fe59-4c5a30744400/mobile640x480',
+    'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/94f72e42-ee06-4aac-39b6-c0818f29bf00/mobile640x480',
+    'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/11f67bfa-8f6e-4b77-501c-c806906f8d00/mobile640x480',
+    'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/f3148d8a-9208-4383-2c91-c2674af43200/mobile640x480',
+    'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/9e366c0c-9dc8-4598-707a-d8602d3f2f00/mobile640x480',
+    'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/02b53d3c-b68f-42cc-ffc4-9bc4792e6c00/mobile640x480',
+    'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/e4c6ee8f-a1a0-412e-b56f-75b125621300/mobile640x480',
+    'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/8bcfa2be-2bc7-4bf7-1973-f984a919c700/mobile640x480'
+]
+---
+
+<MainLayout>
+    <div class="w-screen caret-transparent">
+        {/* Hero */}
+        <div class="relative hero-height-big border-2 border-green-500">
+            <div class="w-full h-full">
+                <img class="object-cover w-full h-full" src="https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/bda8fa39-5351-4199-948e-32a7049da800/hd1920x1080"/>
+            </div>
+            <div class="absolute top-1/2 left-1/2 translate-[-50%]">
+                <h1 class="text-white text-center font-bold text-7xl leading-[115%] tracking-[-1%]">Gallery of Moments</h1>
+            </div>
+        </div>
+        {/* Collection Section */}
+        <div class="py-[120px] custom-section-width md:grid-col-2 grid-col-1 flex flex-col items-center mx-auto">
+            <h3 class="section-highlight font-normal text-lg leading-[150%]">Moments in Time</h3>
+            <h2 class="font-bold text-5xl leading-[120%] tracking-[-1%]">Explore The Collection</h2>
+            <div class="mt-15 grid md:grid-cols-2 grid-cols-1 gap-8">
+                {
+                    imgCollection.map((item:string, index:number) => (
+                        <div class="w-full h-[500px] rounded-custom-medium overflow-hidden border-2 border-green-600">
+                            <img class="object-cover w-full h-full" src={item}/>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</MainLayout>

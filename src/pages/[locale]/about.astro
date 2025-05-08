@@ -1,0 +1,36 @@
+---
+import ExploreSection from '@/components/about/sections/ExploreSection.astro';
+import StayInspiredSection from '@/components/about/sections/StayInspiredSection.astro';
+import WelcomeSection from '@/components/about/sections/WelcomeSection.astro';
+import MainLayout from '@/layouts/MainLayout.astro';
+import type { IGPost } from '@/types/ig_post_types';
+import { translations, type SupportedLocale } from '@/utils/localeUtils';
+
+const { locale } = Astro.params;
+
+const safeLocale = locale as SupportedLocale;
+
+const igPosts: IGPost[] = await translations[safeLocale]['ig_posts.json']();
+---
+
+<MainLayout>
+  <div class="w-screen caret-transparent">
+    {/* Hero */}
+    <div class="relative hero-height-big border-2 border-green-500">
+      <div class="-z-10 border-2 border-red-500 w-full h-full">
+        <img
+        class="w-full h-full object-cover"
+          src="https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/df5c4498-0d9a-4433-5216-ee59a6305000/hd1920x1080"
+        />
+      </div>
+      <div
+        class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-10"
+      >
+        <h1 class="text-7xl text-white text-center">About VoyageBlur</h1>
+      </div>
+    </div>
+    <WelcomeSection />
+    <ExploreSection />
+    <StayInspiredSection igPosts={igPosts} />
+  </div>
+</MainLayout>

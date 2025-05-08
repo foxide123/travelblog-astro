@@ -1,0 +1,53 @@
+{
+    "preview": [
+        {
+            "imgUrl": "",
+            "country": "Japan",
+            "readingDuration": "6",
+            "header": "The Lost Temples of Kyoto",
+            "description": "Discovering hidden sacred spaces through a vintage film lens."
+        },
+        {
+            "imgUrl": "",
+            "country": "Portugal",
+            "readingDuration": "7",
+            "header": "Coastal Dreams: Portugal's",
+            "description": "Film photography along the rugged shores of the Algarve."
+        },
+        {
+            "imgUrl": "",
+            "country": "Morocco",
+            "readingDuration": "7",
+            "header": "Desert tones: Morocco’s Sahara",
+            "description": "Capturing golden hour with expired film in the dunes."
+        },
+        {
+            "imgUrl": "",
+            "country": "Italy",
+            "readingDuration": "5",
+            "header": "Exploring the Dolomites",
+            "description": "Discover breathtaking peaks and alpine beauty in Italy’s heart."
+        },
+        {
+            "imgUrl": "",
+            "country": "Italy",
+            "readingDuration": "5",
+            "header": "Exploring the Dolomites",
+            "description": "Discover breathtaking peaks and alpine beauty in Italy’s heart."
+        },
+        {
+            "imgUrl": "",
+            "country": "Italy",
+            "readingDuration": "4",
+            "header": "Wonders of Venice",
+            "description": "Explore the timeless canals and vibrant culture of Venice, where every corner tells a story."
+        },
+        {
+            "imgUrl": "",
+            "country": "Indonesia",
+            "readingDuration": "5",
+            "header": "Exploring Bali's Green Heart",
+            "description": "Discover the peaceful charm of Bali’s rice fields, where nature meet in perfect harmony."
+        }
+    ]
+}

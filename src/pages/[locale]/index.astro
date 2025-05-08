@@ -1,11 +1,21 @@
 ---
-import Layout from "@/layouts/MainLayout.astro";
+import Layout from '@/layouts/MainLayout.astro';
 import type { Props as MetadataProps } from '@/components/seo/Metadata.astro';
-import { getLocaleWithFlag, SupportedLocaleArray, translations, type SupportedLocale } from "@/utils/localeUtils";
+import {
+  getLocaleWithFlag,
+  SupportedLocaleArray,
+  translations,
+  type SupportedLocale,
+} from '@/utils/localeUtils';
+import HeroSection from '@/components/home/sections/HeroSection.astro';
+import FeaturedStoriesSection from '@/components/home/sections/FeaturedStoriesSection.astro';
+import AboutSection from '@/components/home/sections/AboutSection.astro';
+import DestinationsSection from '@/components/home/sections/DestinationsSection.astro';
+import GallerySection from '@/components/home/sections/GallerySection.astro';
 
 const { locale } = Astro.params;
 
-const supportedLocale = locale as SupportedLocale
+const supportedLocale = locale as SupportedLocale;
 
 const homeData = await translations[supportedLocale]['home.json']();
 const heroData = homeData['hero'];
@@ -27,10 +37,10 @@ const metadata: MetadataProps = {
     },
   },
   openGraph: {
-    url: "https://site-url.com",
-    title: "open-graph-title",
-    description: "open-graph-description",
-	// place og-image.png in public folder
+    url: 'https://site-url.com',
+    title: 'open-graph-title',
+    description: 'open-graph-description',
+    // place og-image.png in public folder
     image: 'https://site-url.com/og-image.png',
   },
   /*  imagesToPreload: {
@@ -43,31 +53,27 @@ const metadata: MetadataProps = {
     ]
   } */
 };
-export async function getStaticPaths(){
-	return SupportedLocaleArray.map((loc) => ({
-		params: { locale: loc }
-	}))
+export async function getStaticPaths() {
+  return SupportedLocaleArray.map((loc) => ({
+    params: { locale: loc },
+  }));
 }
 
 // Only needed if output is set to server in astro.config.mjs
 export const prerender = true;
 // Cache for 1h, serve stale for 60s while revalidating
-Astro.response.headers.set('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=60');
+Astro.response.headers.set(
+  'Cache-Control',
+  'public, s-maxage=3600, stale-while-revalidate=60'
+);
 ---
 
 <Layout metadata={metadata}>
-	<div class="w-screen h-screen flex justify-center items-center">
-		<h1 class="text-2xl mr-10">
-			{heroData.header}
-		</h1>
-		<a href=`/${locale}`>
-			{SupportedLocaleArray
-			.filter(loc => loc !== locale)
-			.map((loc, key) => (
-				<a href={`/${loc}`} class="mr-5">
-					{getLocaleWithFlag(loc)}
-				</a>
-			))}
-		</a>
-	</div>
+  <div class="overflow-hidden">
+    <HeroSection />
+    <FeaturedStoriesSection />
+    <AboutSection />
+    <DestinationsSection />
+    <GallerySection />
+  </div>
 </Layout>

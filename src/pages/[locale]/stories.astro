@@ -1,0 +1,57 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import { translations, type SupportedLocale } from '@/utils/localeUtils';
+
+const { locale } = Astro.params;
+const safeLocale = locale as SupportedLocale;
+
+const storiesData = await translations[safeLocale]['stories.json']()
+const storiesPreview = storiesData['preview'];
+---
+
+<MainLayout>
+  <div class="caret-transparent w-screen">
+    {/* Hero */}
+    <div class="relative hero-height-big">
+      <div class="-z-10 border-2 border-green-500 w-full h-full">
+        <img
+        class="object-cover w-full h-full"
+          src="https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/24b2a10c-831f-4c5d-719b-619e9867e900/hd1920x1080"
+        />
+      </div>
+      <div
+        class="absolute top-1/2 left-1/2 text-7xl text-white translate-x-[-50%] translate-y-[-50%]"
+      >
+        <h1 class="text-center">Featured Stories</h1>
+      </div>
+    </div>
+    {/* Wonder The World */}
+    <div class="py-[120px] custom-section-width border-2 border-green-500 flex flex-col items-center custom-section-width mx-auto">
+      <h2 class="mt-2 text-5xl font-bold leading-[120%] tracking-[-1%]">Explore All Stories</h2>
+      <p class="mt-5 font-normal text-base leading-[150%] text-center w-[630px]">
+        Discover the places we&apos;ve captured through our analog lenses, each
+        with its own unique stories and film aesthetics.
+      </p>
+      <div class="mt-15 w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+        {
+          storiesPreview.map((item:any, index:number) => (
+            <div class="w-full flex flex-col items-center">
+              <div class="w-full h-[300px] rounded-custom-medium overflow-hidden">
+                <img class="object-cover w-full h-full" src={item.imgUrl}/>
+              </div>
+              <div class="mt-4 flex w-full justify-between">
+                <div class="flex">
+                  <img src="/map_icon.svg"/>
+                  <p class="font-normal text-base leading-[150%]">{item.country}</p>
+                </div>
+                <p>{item.readingDuration} min read</p>
+              </div>
+              <h3 class="mt-4 font-semibold text-2xl leading-[140%] tracking-[-1%]">{item.header}</h3>
+              <p class="mt-2 font-normal text-base leading-[150%]">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</MainLayout>

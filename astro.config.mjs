@@ -17,7 +17,7 @@ export default defineConfig({
   prefetch: true,
   trailingSlash: "ignore",
   i18n: {
-    locales: ['en', 'de', 'pl'],
+    locales: ['en', 'pl'],
     defaultLocale: 'en',
     routing: 'manual'
   },

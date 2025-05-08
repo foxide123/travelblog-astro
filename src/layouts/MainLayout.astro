@@ -1,6 +1,7 @@
 ---
 import Footer from "@/components/LayoutComponents/Footer.astro"
 import Navbar from "@/components/LayoutComponents/Navbar.astro"
+import StayConnected from "@/components/LayoutComponents/StayConnected.astro";
 import Metadata from "@/components/seo/Metadata.astro"
 import "@/styles/global.css"
 
@@ -26,6 +27,7 @@ const { metadata } = Astro.props;
       <slot />
       <!-- your content is injected here -->
     </article>
+    <StayConnected/>
     <Footer
     />
   </body>

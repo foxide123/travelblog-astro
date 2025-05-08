@@ -1,0 +1,28 @@
+{
+    "posts": [
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/f99246c8-4b5c-4d8e-9a02-76a0a8cd5c00/thumbnail300x300",
+            "description": "The colors may fade, but the memories remain, etched in...",
+            "likeCount": "3,112",
+            "commentCount": "107"
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/5c24e8ca-65b9-4be4-bdfc-889dfa139d00/thumbnail300x300",
+            "description": "Between sky and earth, where time slows down and every step...",
+            "likeCount": "2,846",
+            "commentCount": "99"
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/c3d3d3e0-636b-4a00-6d2d-1c888bea4c00/thumbnail300x300",
+            "description": "A suitcase, a ticket, a fleeting moment—each journey is a story...",
+            "likeCount": "2,273",
+            "commentCount": "91"
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/8dedaa11-d243-4979-92df-af19061e9e00/thumbnail300x300",
+            "description": "The rustle of leaves, the scent of the earth, the way light dances...",
+            "likeCount": "1,958",
+            "commentCount": "78"
+        }
+    ]
+}

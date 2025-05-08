@@ -1,14 +1,10 @@
-export type SupportedLocale = 'en' | 'pl' | 'de';
+export type SupportedLocale = 'en' | 'pl';
 
-export const SupportedLocaleArray: SupportedLocale[] = ["en", "pl", "de"];
+export const SupportedLocaleArray: SupportedLocale[] = ["en", "pl"];
 export const DefaultLocale = "en";
 
 export const getLocaleWithFlag = (locale: String) => {
   switch (locale) {
-    case "de":
-      return "🇩🇪 de";
-    case "ro":
-      return "🇷🇴 ro";
     case "pl":
       return "🇵🇱 pl";
     default:
@@ -17,10 +13,13 @@ export const getLocaleWithFlag = (locale: String) => {
 };
 
 // all of the translation files
-type JsonFiles = 'home.json';
+type JsonFiles = 'home.json' | 'ig_posts.json' | 'stories.json' | 'destinations.json';
 
 const jsonFiles: JsonFiles[] = [
-  'home.json'
+  'home.json',
+  'ig_posts.json',
+  'stories.json',
+  'destinations.json'
 ]
 
 

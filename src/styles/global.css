@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+@theme {
+    --radius-custom-small: 12px;
+    --radius-custom-medium: 16px;
+    --radius-custom-big: 20px;
+    --color-custom-bg-gray: #F8F8F8;
+    --color-custom-btn-border: #1B365D; 
+    --color-custom-dark-blue: #1B365D;
+    --color-custom-footer-blue: #061428;
+}
+
+@layer components {
+    .custom-section-width {
+        @apply lg:w-[75vw] w-[85vw]
+    }
+
+    .section-highlight{
+        @apply relative pl-5;
+
+        &::before {
+            content: '';
+            position: absolute;
+            border: 1px solid black;
+            width: 16px;
+            top: 50%;
+            left: 0;
+        }
+    }
+
+    .hero-height-big{
+        @apply h-[750px]
+    }
+
+    .hero-height-large{
+        @apply h-[850px]
+    }
+}

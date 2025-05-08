@@ -1,0 +1,49 @@
+---
+import { Stories } from '@/data/story_data';
+---
+
+<div
+  class="bg-white caret-transparent flex w-screen items-center justify-center"
+>
+  <div class={`py-[120px] flex flex-col custom-section-width`}>
+    <h3 class="section-highlight font-normal text-lg leading-[150%]">Captured In Film</h3>
+    <h1 class="mt-2 font-bold text-5xl leading-[120%] tracking-[-1%]">Featured Stories</h1>
+    <h2 class="mt-5 text-custom-font-gray font-normal text-base leading-[150%]">
+      Travel narratives captures on analog film, documenting moments of beauty
+      and discovery around the world.
+    </h2>
+    {/* Stories */}
+    <div
+      class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center"
+    >
+      {
+        Stories.map((story) => (
+          <div class={`max-w-[400px] w-full`}>
+            <img
+              src={story.imgUrl}
+              alt="Story Image"
+              width={451}
+              height={302}
+              class="rounded-2xl"
+            />
+            {/* Country name and reading duration */}
+            <div class="flex flex-row text-base font-medium">
+              <h3 class="font-normal text-base leading-[150%]">{story.country}</h3>
+              <h3 class="font-normal text-base leading-[150%]">{story.read_time} min read</h3>
+            </div>
+            <h2 class="font-semibold text-2xl">{story.title}</h2>
+            <h3 class="font-normal text-base text-custom-font-gray">
+              {story.description}
+            </h3>
+          </div>
+        ))
+      }
+    </div>
+
+    {
+      /* <button onClick={()=>{}} class="px-10 py-3 rounded-xl">
+          View All Posts
+      </button> */
+    }
+  </div>
+</div>

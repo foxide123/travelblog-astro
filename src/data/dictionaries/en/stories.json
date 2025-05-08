@@ -1,0 +1,46 @@
+{
+    "preview": [
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/5380d17d-db07-4592-3270-45fed6685100/mobile640x480",
+            "country": "Japan",
+            "readingDuration": "6",
+            "header": "The Lost Temples of Kyoto",
+            "description": "Discovering hidden sacred spaces through a vintage film lens."
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/95666cb0-0eac-4af6-3ea4-362f1986f500/mobile640x480",
+            "country": "Portugal",
+            "readingDuration": "7",
+            "header": "Coastal Dreams: Portugal's",
+            "description": "Film photography along the rugged shores of the Algarve."
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/8ec9058c-a395-46a4-724b-b2e738c63e00/mobile640x480",
+            "country": "Morocco",
+            "readingDuration": "7",
+            "header": "Desert tones: Morocco’s Sahara",
+            "description": "Capturing golden hour with expired film in the dunes."
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/60f70182-a13d-4bcb-2db7-2c1fd64f5000/mobile640x480",
+            "country": "Italy",
+            "readingDuration": "5",
+            "header": "Exploring the Dolomites",
+            "description": "Discover breathtaking peaks and alpine beauty in Italy’s heart."
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/7530c403-db5b-4f8e-62e0-ff6b11db7c00/mobile640x480",
+            "country": "Italy",
+            "readingDuration": "4",
+            "header": "Wonders of Venice",
+            "description": "Explore the timeless canals and vibrant culture of Venice, where every corner tells a story."
+        },
+        {
+            "imgUrl": "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/3daed13e-2a88-4f6f-9fc4-9341011c1e00/mobile640x480",
+            "country": "Indonesia",
+            "readingDuration": "5",
+            "header": "Exploring Bali's Green Heart",
+            "description": "Discover the peaceful charm of Bali’s rice fields, where nature meet in perfect harmony."
+        }
+    ]
+}

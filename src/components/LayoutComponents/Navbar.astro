@@ -1,0 +1,29 @@
+---
+ const { locale } = Astro.params;
+ const pathname = Astro.url.pathname;
+ const slug = pathname.split("/")[2];
+ console.log("slug", slug)
+
+ console.log("pathname:", pathname);
+---
+<div class={`z-50 ${slug===undefined ? "bg-transparent" : "bg-white"} w-screen absolute top-0 flex justify-center caret-transparent`}>
+  <div
+  class={` py-10 custom-section-width lg:flex flex-row justify-around items-center hidden`}
+>
+  <div>
+    <h1>VoyageBlur</h1>
+  </div>
+  <div>
+    <ul class="flex flex-row font-normal text-lg leading-[150%]">
+      <li class="pr-5">
+        <a href="/">Home</a>
+      </li>
+      <li class="pr-5"><a href={`/${locale}/stories`}>Stories</a></li>
+      <li class="pr-5"><a href={`/${locale}/about`}>About</a></li>
+      <li class="pr-5"><a href={`/${locale}/destinations`}>Destinations</a></li>
+      <li class="pr-5"><a href={`/${locale}/gallery`}>Gallery</a></li>
+    </ul>
+  </div>
+</div>
+
+</div>
