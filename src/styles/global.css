@@ -1,5 +1,40 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/fonts/PlayfairDisplay-VariableFont_wght.ttf');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Poppins BOLD*/
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Poppins MEDIUM (500)*/
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Poppins Regular (400) */
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 @theme {
     --radius-custom-small: 12px;
     --radius-custom-medium: 16px;
@@ -35,4 +70,8 @@
     .hero-height-large{
         @apply h-[850px]
     }
+}
+
+body{
+    font-family: 'PlayfairDisplay', sans-serif;
 }

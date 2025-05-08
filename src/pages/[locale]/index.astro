@@ -12,6 +12,7 @@ import FeaturedStoriesSection from '@/components/home/sections/FeaturedStoriesSe
 import AboutSection from '@/components/home/sections/AboutSection.astro';
 import DestinationsSection from '@/components/home/sections/DestinationsSection.astro';
 import GallerySection from '@/components/home/sections/GallerySection.astro';
+import StayInspiredSectionHome from '@/components/home/sections/StayInspiredSectionHome.astro';
 
 const { locale } = Astro.params;
 
@@ -75,5 +76,6 @@ Astro.response.headers.set(
     <AboutSection />
     <DestinationsSection />
     <GallerySection />
+    <StayInspiredSectionHome/>
   </div>
 </Layout>

@@ -1,4 +1,5 @@
 ---
+import SectionHighlight from '@/components/SectionHighlight.astro';
 import { Destinations } from '@/data/destinations_data';
 ---
 
@@ -8,7 +9,7 @@ import { Destinations } from '@/data/destinations_data';
   <div
     class={`lg:mt-20 mt-10 mb-20 custom-section-width flex flex-col justify-center items-center overflow-hidden`}
   >
-    <h2 class="font-normal text-base">EXPLORE</h2>
+    <SectionHighlight>Explore</SectionHighlight>
     <h1 class="font-normal lg:text-6xl text-5xl">Destinations</h1>
     <h3
       class="lg:text-start text-center mt-5 font-normal text-2xl text-custom-font-gray"
