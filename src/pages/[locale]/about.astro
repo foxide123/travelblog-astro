@@ -16,7 +16,11 @@ const igPosts: IGPost[] = await translations[safeLocale]['ig_posts.json']();
 <MainLayout>
   <div class="w-screen caret-transparent">
     {/* Hero */}
-    <div class="relative hero-height-big border-2 border-green-500">
+    <div 
+    style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAflBMVEVHcExmXVGUjHxeUEc7NDRPRD42KitnYlp2aFlNPjhiU0pBQTiUkIGIe2l9ZlFhSz1UUkhgWk90bF+Jd2SOiXosJCZjVkQUDhRuZlx0cmiEgnc5NishFhoHBA2EbltwYVBtW0qCfnArLzVHLyVPSDw9PjxrWEJQS0VGOzd+fHNawyQuAAAAAXRSTlMAQObYZgAAAIZJREFUGNOtyFcSgyAUAMCHdEQEFOy9Jfe/YMgRMpP9XIDfde+truss01mitQaetGKeq6ootr7v4bHOoWUxRgjR+q6DPM9Pesa4RpTwNsU1DAPFjFHrrt2Bv2+/4SaMTSg4JRbKozRmPcZpelVE7gIexmSJMQsEk4YoDwgpSen3lGREKfiDDzs6CPW3mRlYAAAAAElFTkSuQmCC');
+    background-size: cover;
+    background-position: center"
+    class="relative hero-height-big border-2 border-green-500">
       <div class="-z-10 border-2 border-red-500 w-full h-full">
         <img
         class="w-full h-full object-cover"

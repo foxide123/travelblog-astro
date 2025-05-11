@@ -7,22 +7,24 @@ import { Destinations } from '@/data/destinations_data';
   class="bg-white caret-transparent w-screen flex justify-center items-center bg-custom-bg"
 >
   <div
-    class={`lg:mt-20 mt-10 mb-20 custom-section-width flex flex-col justify-center items-center overflow-hidden`}
+    class={`section-y_padding-lg custom-section-width flex flex-col justify-center items-center overflow-hidden`}
   >
     <SectionHighlight>Explore</SectionHighlight>
-    <h1 class="font-normal lg:text-6xl text-5xl">Destinations</h1>
+    <h1 class="font-normal text-5xl">Destinations</h1>
     <h3
-      class="lg:text-start text-center mt-5 font-normal text-2xl text-custom-font-gray"
+      class="text-start mt-5 font-normal text-base text-custom-font-gray leading-[150%]"
     >
       Discover the places we&apos;ve captured through our analog lenses, each
       with its own unique stories and film aesthetics
     </h3>
     {/* Destination Items Wrapper */}
-    <div class="mt-10 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-20">
+    <div class="lg:gap-20 gap-10 mt-10 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1">
       {
         Destinations.map((destination) => (
-          <div class="border-2 border-green-500 lg:h-[301px] h-[250px] rounded-2xl relative overflow-hidden">
+          <div
+          class="lg:h-[301px] h-[250px] rounded-2xl relative overflow-hidden">
             <img
+            loading="lazy"
               class="w-full h-full object-cover"
               src={destination.image_src}
               alt="Destination Picture"
@@ -30,6 +32,7 @@ import { Destinations } from '@/data/destinations_data';
             {/* Destination Icon and Name */}
             <div class="pl-6 pb-[17px] flex flex-row justify-start items-center absolute bottom-0 w-full">
               <img
+              loading="lazy"
                 src="/location_icon.svg"
                 alt="Location Icon"
                 class="mr-5"
@@ -44,7 +47,7 @@ import { Destinations } from '@/data/destinations_data';
       }
     </div>
     <h3 class="font-semibold text-2xl mt-10">More Places Coming Soon</h3>
-    <p class="font-normal text-base">
+    <p class="mt-2 font-normal text-base">
       We&apos;re constantly exploring new destinations and adding them to our
       film travel journal. check back soon or subscribe to our newsletter to be
       notified

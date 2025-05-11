@@ -46,6 +46,10 @@
 }
 
 @layer components {
+    .section-y_padding-lg{
+        @apply lg:py-[120px] py-[60px]
+    }
+
     .custom-section-width {
         @apply lg:w-[75vw] w-[85vw]
     }

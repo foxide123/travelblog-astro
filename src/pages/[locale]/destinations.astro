@@ -13,7 +13,11 @@ const destinationPreviews = destinationData['previews'];
 <MainLayout>
   <div class="w-screen caret-transparent">
     {/* Hero */}
-    <div class="relative hero-height-big">
+    <div 
+    style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAn1BMVEVHcEwrKDFCNiEqKyGPhokuM0VIPSA5OR42MxlMOCo6LyVeRz2dfXA0MCozMDdoXmVVVF2Zdmo1N0hESR8hFxQzLh41IhkmJhomIi+RfHJSPjIjJCVrST93bnNvanQ8PSYsLTtfX2ssKzNERR5ePCVPRCB1WE8lIRZHPkg/KyC5im+kiX1NTVRRRD7Ak3WDcHRoRi7BrZ9PPj1JSVY7MjOxiC9HAAAAAXRSTlMAQObYZgAAAHZJREFUGNO1wQcCgiAUANAPxEYU3ObE9h7e/2x1iHoP4AcqNFJPKfXvuDtUKINLksTx6qs2z7OpFSRTP/muvztn3O20KyAKKNgxILS8dNvKDMg6IrKxNixXrRtMICe8PD7IMCiFJUtL2AqxLzZMzDzHmKUc/uEDBTcIxC4oWREAAAAASUVORK5CYII=');
+    background-size: cover;
+    background-position: center"
+    class="relative hero-height-big">
       <div class="-z-10 w-full h-full">
         <img
           class="object-cover w-full h-full"
@@ -46,10 +50,10 @@ const destinationPreviews = destinationData['previews'];
           destinationPreviews.map((item: any, index: number) => (
             <div class="relative border-2 border-green-500">
               <div class="h-[300px] rounded-custom-medium overflow-hidden">
-                <img class="object-cover w-full h-full" src={item.imgUrl} />
+                <img loading="lazy" class="object-cover w-full h-full" src={item.imgUrl} />
               </div>
               <div class="flex absolute bottom-0 pl-6 pr-2 pb-[17px] text-white">
-                <img width={24} height={24} src="/location_icon.svg" />
+                <img loading="lazy" width={24} height={24} src="/location_icon.svg" />
                 <p class="pl-2 font-semibold text-2xl leading-[140$] tracking-[-1%]">
                   {item.place}{item.country && <span>,</span>} {item.country}
                 </p>

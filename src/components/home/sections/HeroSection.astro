@@ -3,10 +3,15 @@ import SectionHighlight from "@/components/SectionHighlight.astro";
 
 
 ---
-<div class="relative border-2 border-red-500 lg:h-screen h-[75vh] caret-transparent w-screen flex justify-center items-center overflow-hidden">
+<div class="relative border-2 border-red-500 lg:h-screen md:h-[75vh] caret-transparent w-screen flex justify-center items-center overflow-hidden">
     {/* Bg Image */}
-    <div class="fixed border-2 border-blue-500 h-full w-full -z-10">
-      <img
+    <div 
+    style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAolBMVEVHcEzf5ejZ4ubW3+TZ4+nw8O7K2+PF1+Lx7+ri6Ovy7ePQ3eXY2NDn6+3L2eLn5Nv18u7k4NfT3+fj49/S08rs7Ojv6t67wrzt7u3n6Obq5t0qNiXA1OG40N/Q2+JyfGjByMQxPCZ8hnbf3NOnsachLiPa5e2Xo5m0vLPKzsdJVUQZJiCRnJBBSziuyt6KlIQ6Ri5GUixfaFedqKHAwLGDi31MSYrPAAAAAXRSTlMAQObYZgAAAZlJREFUOMvdj1l2qzAQRIUMmBgwk5ksM0OYPSb731qqBZt47x50+KirrhZj/wLZ7QjO5zNOfuAm4Zu66auqD77Z/Z7dbhSec/Mg4dz3OVchfAMSjmcYOdhiLlNA+RfLsntGM6Bg9oGrCvFF2AQEysFR19GhqOom2HaSaJqWsH1HXacc9ZzLPLHJgMLkgjlS2n6vSMPETaSQkLDfz7HBYbufpqkdhomBCpchl6lp7k9QqSFFrrma67oM89GNSKbKPoCExDBoAr2+CYLgihPwQAmUVApGKEtcZlmN53lO4AUbV3kdXxgagARrtJpmyx3HuUZRdDrhM2TusjIeyrIcLxjkUE5IBxgny2Xtpy7jsYzjmCxIkUQKblM47P1+/9bxEG/GBY6HmivOKTJ+1oVV83Nai8dnIAEzJNjb8S7jWIs3hK4T01TXv8MQl7RKQ8+yxqFt26lbIcyzqMQqpvrRtkNMNZdyaD99/1nW14tVXSWE6Og3FfWy9O3P0Pb490tfCFGx6vV8dWJ+QqueaCrqx6MANc40zx37L/gDceo1mwD6goYAAAAASUVORK5CYII=');
+    background-size: cover; 
+    background-position: center;
+    "
+    class="fixed h-full w-full -z-10">
+        <img
         src="https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/37aed710-e371-4714-0520-f51fcb57da00/hd1920x1080"
         alt="hero background"
         style={{ objectFit: "cover" }}
@@ -17,12 +22,12 @@ import SectionHighlight from "@/components/SectionHighlight.astro";
     </div>
 
     <div
-      class={`border-2 border-green-500 flex justify-center items-center mb-10 lg:pt-10 text-wrap h-full z-10 relative custom-section-width`}
+      class={`lg:mb-10 lg:pt-10 border-2 border-green-500 flex justify-center items-center text-wrap h-full z-10 relative custom-section-width`}
     >
       {/* Middle Section */}
       <div class="lg:h-auto lg:mt-20 px-20 flex flex-col justify-center items-center h-full">
         <SectionHighlight>Timeless Frames</SectionHighlight>
-        <h1 class="mt-2 lg:text-[72px] text-5xl font-bold leading-[115%] tracking-[-1%] text-center">
+        <h1 class="lg:text-[72px] text-5xl font-bold leading-[115%] tracking-[-1%] text-center">
           Exploring the world, <br /> one blurry frame at the time
         </h1>
         <h2 class="mt-5 max-w-[480px] text-base font-medium p-2.5 text-center">

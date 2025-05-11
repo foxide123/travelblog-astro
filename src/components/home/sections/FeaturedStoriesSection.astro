@@ -6,9 +6,11 @@ import { Stories } from '@/data/story_data';
 <div
   class="bg-white caret-transparent flex w-screen items-center justify-center"
 >
-  <div class={`py-[120px] flex flex-col custom-section-width`}>
-    <SectionHighlight>Captured In Film</SectionHighlight>
-    <h1 class="mt-2 font-bold text-5xl leading-[120%] tracking-[-1%]">Featured Stories</h1>
+  <div class={`section-y_padding-lg flex flex-col custom-section-width`}>
+    <div class="lg:justify-start justify-center flex w-full ">
+      <SectionHighlight>Captured In Film</SectionHighlight>
+    </div>
+    <h1 class="lg:text-start text-center font-bold text-5xl leading-[120%] tracking-[-1%]">Featured Stories</h1>
     <h2 class="mt-5 text-custom-font-gray font-normal text-base leading-[150%]">
       Travel narratives captures on analog film, documenting moments of beauty
       and discovery around the world.
@@ -26,6 +28,7 @@ import { Stories } from '@/data/story_data';
               width={451}
               height={302}
               class="rounded-2xl"
+              loading="lazy"
             />
             {/* Country name and reading duration */}
             <div class="flex flex-row text-base font-medium">

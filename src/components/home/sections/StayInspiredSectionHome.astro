@@ -1,33 +1,35 @@
 ---
-import SectionHighlight from "@/components/SectionHighlight.astro";
+import SectionHighlight from '@/components/SectionHighlight.astro';
 ---
 
 <div class="bg-white w-screen flex justify-center">
-    <div class="py-[120px] custom-section-width flex flex-col">
-        <div class="flex">
-            <div class="w-1/2">
-                <SectionHighlight>Stay Inspired</SectionHighlight>
-                <h2 class="mt-2 font-bold text-5xl leading-[120%] tracking-[-1%]">Capture The Moment <br/> With Us</h2>
-                <p class="mt-5 font-normal text-base leading-[150%]">Film photography and travel moments, captured on YouTube & Instagram. Follow along for behind-the-scenes, stories, and raw film aesthetics.</p>
-            </div>
-            <div class="w-1/2">
-                <div class="flex flex-col w-full border-2 border-pink-500">
-                    <iframe
-                      class="rounded-custom-big w-full"
-                      height="495"
-                      src="https://www.youtube.com/embed/nJPVTmVmpFs?si=FyfvXrT0Kq_drSlQ"
-                      title="YouTube video player"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerpolicy="strict-origin-when-cross-origin"
-                      allowfullscreen></iframe>
-                    <div class="flex mt-4">
-                      <p>YouTube</p>
-                      <p>12.5K Views</p>
-                      <p>Join 140+ Subscribers</p>
-                    </div>
-                  </div>
-            </div>
+  <div class="section-y_padding-lg custom-section-width flex flex-col">
+    <div class="flex flex-col">
+      <SectionHighlight>Stay Inspired</SectionHighlight>
+      <h2 class="mt-2 font-bold text-5xl leading-[120%] tracking-[-1%]">
+        Capture The Moment <br /> With Us
+      </h2>
+      <div class="flex flex-col w-full border-2 border-pink-500">
+        <iframe
+          loading="lazy"
+          class="rounded-custom-big w-full"
+          height="495"
+          src="https://www.youtube.com/embed/nJPVTmVmpFs?si=FyfvXrT0Kq_drSlQ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+        <div class="flex mt-4">
+          <p>YouTube</p>
+          <p>12.5K Views</p>
+          <p>Join 140+ Subscribers</p>
         </div>
+      </div>
+      <p class="mt-5 font-normal text-base leading-[150%]">
+        Film photography and travel moments, captured on YouTube & Instagram.
+        Follow along for behind-the-scenes, stories, and raw film aesthetics.
+      </p>
     </div>
+  </div>
 </div>

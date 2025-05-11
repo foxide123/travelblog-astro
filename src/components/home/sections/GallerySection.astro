@@ -1,39 +1,88 @@
 ---
-import SectionHighlight from '@/components/SectionHighlight.astro';
+import SectionHighlight from "@/components/SectionHighlight.astro";
 
 const imgCollection = [
-  'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/9e366c0c-9dc8-4598-707a-d8602d3f2f00/mobile640x480',
-  'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/02b53d3c-b68f-42cc-ffc4-9bc4792e6c00/mobile640x480',
-  'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/e4c6ee8f-a1a0-412e-b56f-75b125621300/mobile640x480',
-  'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/8bcfa2be-2bc7-4bf7-1973-f984a919c700/mobile640x480',
+  {
+    img: 'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/9e366c0c-9dc8-4598-707a-d8602d3f2f00/mobile640x480',
+    location: 'Ireland'
+  },
+  {
+    img:'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/02b53d3c-b68f-42cc-ffc4-9bc4792e6c00/mobile640x480',
+    location: 'Norway' 
+  },
+  {
+    img: 'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/e4c6ee8f-a1a0-412e-b56f-75b125621300/mobile640x480',
+    location: "Poland" 
+  },
+  {
+    img: 'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/8bcfa2be-2bc7-4bf7-1973-f984a919c700/mobile640x480',
+    location: "Austria"
+  }
 ];
 ---
+<style>
+  .tooltip {
+  position: relative;
+  display: inline-block;
+}
 
+.dot {
+  display: block;
+  width: 35px;
+  height:35px;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: orange;
+}
+
+.content {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  opacity: 0;
+  background-color: #F8F8F8;
+  padding: 4px 32px 4px 32px;
+  border-radius: 16px;
+  transition: opacity .5s ease-in;
+}
+
+.tooltip:hover .content {
+  opacity: 0.9;
+}
+</style>
 <div
-  class="bg-custom-bg-gray caret-transparent w-screen flex justify-center items-center"
+  class="section-y_padding-lg bg-custom-bg-gray caret-transparent w-screen flex justify-center items-center"
 >
   <div
-    class={`text-center text-wrap pt-10 pb-30 z-10 relative custom-section-width`}
+    class={`text-center text-wrap z-10 relative custom-section-width`}
   >
     <div class="mx-auto w-fit">
-      <SectionHighlight>Gallery</SectionHighlight>
+                <SectionHighlight>Gallery</SectionHighlight> 
     </div>
-    <h1 class="mt-2 font-bold text-5xl leading-[120%] tracking-[-1%]">Through The Analog Lens</h1>
+    <h1 class="font-bold text-5xl leading-[120%] tracking-[-1%]">
+      Through The Analog Lens
+    </h1>
     <h3 class="mt-2 font-normal text-base leading-[150%] text-custom-font-gray">
       A curated selection of film photographs capturing the soul of our travels.
     </h3>
     {/*Gallery Pictures*/}
-    <div class="mt-15 flex flex-col">
+    <div class="lg:mt-15 mt-10 flex flex-col">
       <div
-        class="grid md:grid-cols-2 grid-cols-1 gap-8 w-full border-2 border-green-500"
+        class="grid md:grid-cols-2 grid-cols-1 gap-8 w-full"
       >
         {
-          imgCollection.map((item: string) => (
-            <div class="w-full border-2 border-red-500">
+          imgCollection.map((item: any, index:number) => (
+            <div class="tooltip w-full rounded-custom-medium overflow-hidden">
               <img
-                class="object-cover w-full h-full rounded-custom-medium overflow-hidden"
-                src={item}
+              loading="lazy"
+                class={`transform transition duration-3500 ease-out ${index % 2 === 0 ? "hover:rotate-[0.3deg] " : "hover:-rotate-[0.3deg]"} hover:scale-105 hover:brightness-110 object-cover w-full h-full`}
+                src={item['img']}
               />
+              <div class="content">
+                <p>{item['location']}</p>
+              </div>
             </div>
           ))
         }
@@ -41,3 +90,24 @@ const imgCollection = [
     </div>
   </div>
 </div>
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    for (const tooltip of document.querySelectorAll('.tooltip')) {
+      const dot     = tooltip.querySelector('.dot');
+      const content = tooltip.querySelector('.content');
+      const offset  = 8;
+
+      dot.addEventListener('mousemove', e => {
+        const rect = tooltip.getBoundingClientRect();
+        content.style.left = (e.clientX - rect.left + offset) + 'px';
+        content.style.top  = (e.clientY - rect.top  + offset) + 'px';
+        content.classList.add('visible');
+      });
+
+      dot.addEventListener('mouseleave', () => {
+        content.classList.remove('visible');
+      });
+    }
+  });
+</script>

@@ -3,36 +3,41 @@ import SectionHighlight from "@/components/SectionHighlight.astro";
 
 
 ---
-<div class="py-[120px] bg-custom-bg-gray caret-transparent w-screen flex justify-center items-center">
+<div class="section-y_padding-lg bg-custom-bg-gray caret-transparent w-screen flex justify-center items-center">
     <div
-      class={`grid lg:grid-cols-2 grid-cols-1 lg:grid-rows-12 grid-rows-9 custom-section-width lg:text-start text-center`}
+      class={`grid lg:grid-cols-2 grid-cols-1 lg:grid-rows-12 custom-section-width text-start`}
     >
     <!--Add self-start self-center -->
-      <h3 class="flex items-end border-2 border-green-500 text-start lg:self-auto self-start  col-start-1 col-span-1 row-start-1 lg:row-span-3 row-span-1  font-normal text-base">
+      <h3 class="lg:justify-start flex justify-center items-end  lg:self-auto  col-start-1 col-span-1 lg:row-span-3  font-normal text-base">
         <SectionHighlight>Our Story</SectionHighlight>
       </h3>
-      <h1 class="border-2 border-green-500 lg:rounded-0 lg:self-auto self-start leading-15 col-start-1 col-span-1 lg:row-start-4 row-start-2 lg:row-span-1 row-span-1  font-medium text-5xl">
+      <h1 class="lg:rounded-0 lg:self-auto lg:text-start text-center leading-15 col-start-1 col-span-1 lg:row-start-4  lg:row-span-1  font-medium text-5xl">
         About VoyageBlur
       </h1>
-      <p class=" border-2 border-green-500 col-start-1 col-span-1 lg:row-start-5  lg:row-span-8 lg:mt-0 mt-10 pt-2 lg:pr-[50px] row-start-5 row-span-6  font-normal text-base text-custom-font-gray">
-        Founded in 2025, VoyageBlur was born from a passion for capturing the
-        world through the unique aesthetics of analog film. In a digital age,
-        we believe there&apos;s something magical about the imperfect, tangible
-        nature of film photography. Our mission is to document travel
-        experiences with authenticity and character that only analog formats
-        can provide. Each grain, light leak, and imperfection tells part of
-        the journey&apos;s story. We believe that travel isn&apos;t just about visiting
-        places—it&apos;s about experiencing them deeply, slowly, and thoughtfully.
-        Just like the deliberate process of shooting film forces you to slow
-        down and consider each frame.
-      </p>
-      <div class="relative lg:col-start-2 lg:h-[1000px] lg:row-span-12 lg:ml-[50px] lg:rounded-0 rounded-2xl overflow-hidden lg:mt-0 mt-10 row-start-3 row-span-2 col-span-1">
+      <div class="relative lg:aspect-auto lg:col-start-2 lg:h-[1000px] lg:row-span-12 lg:ml-[50px] lg:rounded-0 lg:mt-0 aspect-video rounded-2xl overflow-hidden mt-10 col-span-1">
         <img
-          src="/section_image_vertical.jpeg"
+          loading="lazy"
+          src="https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/8c44225d-6823-448d-63ef-6ac039cbc200/hd1920x1080"
           alt="Our Story Image"
           style={{ objectFit: "cover" }}
           class="absolute inset-0 w-full h-full"
         />
       </div>
+      <p class="lg:self-start self-end text-start col-start-1 col-span-1 lg:row-start-5  lg:row-span-8 lg:mt-5 mt-10 pt-2 lg:pr-[50px] font-normal text-base text-custom-font-gray leading-[150%]">
+        Founded in 2025, VoyageBlur was born from a passion for capturing the
+        world through the unique aesthetics of analog film. In a digital age,
+        we believe there&apos;s something magical about the imperfect, tangible
+        nature of film photography.<br/>
+        <div class="mt-5 w-full" />
+        Our mission is to document travel
+        experiences with authenticity and character that only analog formats
+        can provide. Each grain, light leak, and imperfection tells part of
+        the journey&apos;s story. <br/>
+        <div class="mt-5 w-full"/>
+        We believe that travel isn&apos;t just about visiting
+        places—it&apos;s about experiencing them deeply, slowly, and thoughtfully.
+        Just like the deliberate process of shooting film forces you to slow
+        down and consider each frame.
+      </p>
     </div>
   </div>

@@ -13,11 +13,15 @@ const storiesPreview = storiesData['preview'];
   <div class="caret-transparent w-screen">
     {/* Hero */}
     <div class="relative hero-height-big">
-      <div class="-z-10 border-2 border-green-500 w-full h-full">
-        <img
-        class="object-cover w-full h-full"
-          src="https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/24b2a10c-831f-4c5d-719b-619e9867e900/hd1920x1080"
-        />
+      <div 
+      style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABVlBMVEUAAAAfLSpGRklISkxNTEtfWFRaVVM8Oy5OSUdHPjAhMCw1LBk2PDRFRUNiW1iKiogyLyMbMTJVUE1QTU1nW1JHQCk8MhlTMAN1eHkqOjgkIhZjcHUkJR1nYl83PEAJGRwnGQNgU0pcPARITlErLBtYWVgRIB9vaGQpNTMlNzVRUVIaHhghKiJKNxktMydDMwZDLwdkTS9BQ0dURDRIQjxAPCRUNwRPRjBbSSBqRQVUT0FjUD8jPUE1RUiRkY84NiyXlpRxcnORjYtdVzgsPzs1JgwbJiaDc2dVUlE9IgM5P0QhMh5jOAV6bWAcFgNsPgRUQh9xX1BLSDhnVkp0URBkSA9bQhF6XBkUGRhnZmZhXV06QUg9QzNzbmyBgX57fX6Lem57ZUNNKQRrXUIQEAJVOxlQPQM2IAM5KQR3RAVxSwt+WAmDg4BbS0F7XjFYSy2RaQ+OaRSyuSOxAAABtElEQVQ4y+3SRXYiUQCF4Ue5US4UFO7u7tK4azwhHSFJ6/4nTe8gC8g3/s+5kwvAl8+RBwPJMYZQNANDwyErigiGRNqNRuveZrNZOhyYPTwg44wDEREJggmUlRDp+hq2cA3OYrO17+4AKwcHWATKZBAIi8AQemXHEK+E+S2tFsd1ftwDWdy4V7J9CEsQJEoQygYvg7dBuz9ydXnbtnAdkMXTK/knhmIS4XCY/6/YWYz1e71wvV5H/HbgjNLpY9W9qW5kN2HOEUQOIswOXe/VarXeutsFTievbg+/jmuSzGazOJMjQyFdDzM3NzoTEsI94EzS8d17/DldXaHkmZmhTJSC4yaKEkKCEAbWgrbY77alpaq4c5VqEWeEfow3nZ0LIWwGTy7tVSt//Pl7WJaKSl6ZxBLjfiDg7JuoRB7HSaCdPK6Rx1N+/zjs8+tKBU9MEnmlScX4PM8bhgEWnpeTy1MuaG/bnar+ns0qTMzX/d40rHHa5zMCQCu8pOanxdQ1dc33dFQtldwirxybtGq9uLD6GPD4mjw9jd6mo8c5SJZTqVQh+Zxdpov0NzpqRAOTrzt/0j/5yknVeWwnmQAAAABJRU5ErkJggg==');
+      background-size: cover;
+      background-position: center;"
+      class="-z-10 border-2 border-green-500 w-full h-full">
+          <img
+          class="object-cover w-full h-full"
+            src="https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/24b2a10c-831f-4c5d-719b-619e9867e900/hd1920x1080"
+          />
       </div>
       <div
         class="absolute top-1/2 left-1/2 text-7xl text-white translate-x-[-50%] translate-y-[-50%]"
@@ -37,11 +41,11 @@ const storiesPreview = storiesData['preview'];
           storiesPreview.map((item:any, index:number) => (
             <div class="w-full flex flex-col items-center">
               <div class="w-full h-[300px] rounded-custom-medium overflow-hidden">
-                <img class="object-cover w-full h-full" src={item.imgUrl}/>
+                <img loading="lazy" class="object-cover w-full h-full" src={item.imgUrl}/>
               </div>
               <div class="mt-4 flex w-full justify-between">
                 <div class="flex">
-                  <img src="/map_icon.svg"/>
+                  <img loading="lazy" src="/map_icon.svg"/>
                   <p class="font-normal text-base leading-[150%]">{item.country}</p>
                 </div>
                 <p>{item.readingDuration} min read</p>

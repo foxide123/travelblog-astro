@@ -42,7 +42,7 @@ const igPostItems = igPosts['posts'];
       {/* Instagram Element */}
       <div class="flex justify-end">
         <div class="flex items-center border-2 border-green-500">
-          <img width={60} height={60} src="/instagram_icon.svg" />
+          <img loading="lazy" width={60} height={60} src="/instagram_icon.svg" />
           <p class="ml-2">#LostInFrames</p>
         </div>
       </div>
@@ -51,22 +51,23 @@ const igPostItems = igPosts['posts'];
           igPostItems.map((item: IGPost, index: number) => (
             <div class="w-full relative border-2 border-green-500">
               <img
+              loading="lazy"
                 width={28}
                 height={28}
                 class="absolute top-5 right-5"
                 src="/post_icon.svg"
               />
               <div class="rounded-custom-medium overflow-hidden">
-                <img class="object-cover w-full" src={item.imgUrl} />
+                <img loading="lazy" class="object-cover w-full" src={item.imgUrl} />
               </div>
               <p class="mt-4 font-normal text-base leading-[150%]">{item.description}</p>
               <div class="flex">
                 <div class="flex">
-                  <img src="/heart_icon.svg" />
+                  <img loading="lazy" src="/heart_icon.svg" />
                   <span class="font-normal text-base leading-[150%]">3,112</span>
                 </div>
                 <div class="flex">
-                  <img src="/comment_icon.svg" />
+                  <img loading="lazy" src="/comment_icon.svg" />
                   <span class="font-normal text-base leading-[150%]">107</span>
                 </div>
               </div>
