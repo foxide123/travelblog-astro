@@ -1,15 +1,53 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
 import { translations, type SupportedLocale } from '@/utils/localeUtils';
+import { type Props as MetadataProps } from "@/components/seo/Metadata.astro";
 
 const { locale } = Astro.params;
 const safeLocale = locale as SupportedLocale;
 
 const storiesData = await translations[safeLocale]['stories.json']()
 const storiesPreview = storiesData['preview'];
+
+const metadata: MetadataProps = {
+  title: 'Voyageblur Stories',
+  description: 'Voyageblur stories from around the world',
+  keywords: ['travel', 'bikepacking', 'adventures'],
+  creator: 'Jakub Cezary Kolando',
+  publisher: 'Jakub Cezary Kolando',
+  metadataBase: new URL('https://voyageblur.com'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      en: '/en',
+      pl: '/pl',
+    },
+  },
+  openGraph: {
+    url: 'https://voyageblur.com',
+    title: 'Voyablur - Travel Blog',
+    description: 'Voyageblur - travel adentures',
+    // place og-image.png in public folder
+    image: 'https://voyageblur.com/og-image.png',
+  },
+   imagesToPreload: {
+   /*  remoteImages: [
+      {
+        href: "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/37aed710-e371-4714-0520-f51fcb57da00/hd1920x1080",
+        alt: "Background Image",
+        media: "(min-width: 640px)"
+      },
+      {
+        href: "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/37aed710-e371-4714-0520-f51fcb57da00/hd1920x1080",
+        alt: "Background Image",
+        media: "(max-width: 639px)"
+      }
+    ] */
+  }
+};
 ---
 
-<MainLayout>
+<MainLayout metadata={metadata}>
   <div class="caret-transparent w-screen">
     {/* Hero */}
     <div class="relative hero-height-big">

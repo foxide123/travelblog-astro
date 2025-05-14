@@ -22,37 +22,40 @@ const homeData = await translations[supportedLocale]['home.json']();
 const heroData = homeData['hero'];
 
 const metadata: MetadataProps = {
-  title: 'Astro Template',
-  description: 'Astro Template Description',
-  keywords: ['web agency', 'websites', 'custom websites', 'astro'],
-  creator: 'Creator name',
-  publisher: 'Publisher Name',
-  metadataBase: new URL('https://dashcruisedev.com'),
+  title: 'Voyageblur',
+  description: 'Voyageblur blog about travelling and photography',
+  keywords: ['travel', 'bikepacking', 'adventures'],
+  creator: 'Jakub Cezary Kolando',
+  publisher: 'Jakub Cezary Kolando',
+  metadataBase: new URL('https://voyageblur.com'),
   alternates: {
-    canonical: '/en',
+    canonical: '/',
     languages: {
       en: '/en',
-      de: '/de',
       pl: '/pl',
-      ro: '/ro',
     },
   },
   openGraph: {
-    url: 'https://site-url.com',
-    title: 'open-graph-title',
-    description: 'open-graph-description',
+    url: 'https://voyageblur.com',
+    title: 'Voyablur - Travel Blog',
+    description: 'Voyageblur - travel adentures',
     // place og-image.png in public folder
-    image: 'https://site-url.com/og-image.png',
+    image: 'https://voyageblur.com/og-image.png',
   },
-  /*  imagesToPreload: {
+   imagesToPreload: {
     remoteImages: [
       {
-        href: "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/22218a4e-1efb-43dd-ff1e-562588e15a00/hd1920x1080",
+        href: "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/37aed710-e371-4714-0520-f51fcb57da00/hd1920x1080",
         alt: "Background Image",
         media: "(min-width: 640px)"
+      },
+      {
+        href: "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/37aed710-e371-4714-0520-f51fcb57da00/hd1920x1080",
+        alt: "Background Image",
+        media: "(max-width: 639px)"
       }
     ]
-  } */
+  }
 };
 export async function getStaticPaths() {
   return SupportedLocaleArray.map((loc) => ({

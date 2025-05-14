@@ -1,6 +1,7 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
 import { translations, type SupportedLocale } from '@/utils/localeUtils';
+import { type Props as MetadataProps } from "@/components/seo/Metadata.astro";
 
 const { locale } = Astro.params;
 
@@ -8,9 +9,46 @@ const safeLocale = locale as SupportedLocale;
 
 const destinationData = await translations[safeLocale]['destinations.json']();
 const destinationPreviews = destinationData['previews'];
+
+const metadata: MetadataProps = {
+  title: 'Voyageblur Destinations',
+  description: 'Voyageblur Destinations',
+  keywords: ['travel', 'hiking', 'bikepacking', 'travel destinations'],
+  creator: 'Jakub Cezary Kolando',
+  publisher: 'Jakub Cezary Kolando',
+  metadataBase: new URL('https://voyageblur.com'),
+  alternates: {
+    canonical: '/destinations',
+    languages: {
+      en: '/en/destinations',
+      pl: '/pl/destynacje'
+    },
+  },
+  openGraph: {
+    url: 'https://voyageblur.com',
+    title: 'Voyageblur - Destinations',
+    description: 'Check our destinations at Voyablur.',
+    // place og-image.png in public folder
+    image: 'https://voyageblur.com/og-image.png',
+  },
+   imagesToPreload: {
+    remoteImages: [
+      /* {
+        href: "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/37aed710-e371-4714-0520-f51fcb57da00/hd1920x1080",
+        alt: "Background Image",
+        media: "(min-width: 640px)"
+      },
+      {
+        href: "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/37aed710-e371-4714-0520-f51fcb57da00/hd1920x1080",
+        alt: "Background Image",
+        media: "(max-width: 639px)"
+      } */
+    ]
+  }
+};
 ---
 
-<MainLayout>
+<MainLayout metadata={metadata}>
   <div class="w-screen caret-transparent">
     {/* Hero */}
     <div 

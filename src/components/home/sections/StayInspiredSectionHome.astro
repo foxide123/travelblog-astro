@@ -2,14 +2,18 @@
 import SectionHighlight from '@/components/SectionHighlight.astro';
 ---
 
-<div class="bg-white w-screen flex justify-center">
-  <div class="section-y_padding-lg custom-section-width flex flex-col">
-    <div class="flex flex-col">
-      <SectionHighlight>Stay Inspired</SectionHighlight>
-      <h2 class="mt-2 font-bold text-5xl leading-[120%] tracking-[-1%]">
-        Capture The Moment <br /> With Us
-      </h2>
-      <div class="flex flex-col w-full border-2 border-pink-500">
+<div class="h-fit caret-transparent bg-white w-screen flex justify-center">
+  <div class="h-fit section-y_padding-lg custom-section-width flex flex-col">
+    <div class="h-fit grid lg:grid-cols-2 grid-cols-1 auto-rows-auto">
+      <div class="col-start-1 w-[70%]">
+        <SectionHighlight>Stay Inspired</SectionHighlight>
+        <h2 class="mt-2 font-bold text-5xl leading-[120%] tracking-[-1%]">
+          Capture The Moment <br /> With Us
+        </h2>
+      </div>
+      <div
+        class="lg:col-start-2 lg:row-start-1 lg:row-span-11 lg:mt-0 mt-8 h-fit flex flex-col w-full"
+      >
         <iframe
           loading="lazy"
           class="rounded-custom-big w-full"
@@ -20,13 +24,31 @@ import SectionHighlight from '@/components/SectionHighlight.astro';
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen></iframe>
-        <div class="flex mt-4">
-          <p>YouTube</p>
+        <div
+          style="font-family: 'Poppins', sans-serif;"
+          class="font-normal text-base leading-[150%] flex mt-4 items-center justify-between pr-[108px]"
+        >
+          <div class="flex items-center gap-2">
+            <div
+              class="flex items-center justify-center bg-custom-accent p-3 rounded-[50%]"
+            >
+              <img
+                loading="lazy"
+                width={36}
+                height={36}
+                src="/youtube_icon.svg"
+              />
+            </div>
+            <p>YouTube</p>
+          </div>
           <p>12.5K Views</p>
           <p>Join 140+ Subscribers</p>
         </div>
       </div>
-      <p class="mt-5 font-normal text-base leading-[150%]">
+      <p
+        style="font-family: 'Poppins', sans-serif;"
+        class="w-[70%] h-fit col-start-1 lg:row-start-2 lg:row-span-10 text-custom-light-blue mt-5 font-normal text-base leading-[150%]"
+      >
         Film photography and travel moments, captured on YouTube & Instagram.
         Follow along for behind-the-scenes, stories, and raw film aesthetics.
       </p>

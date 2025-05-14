@@ -1,5 +1,6 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import {type Props as MetadataProps} from "@/components/seo/Metadata.astro";
 
 const imgCollection = [
     'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/92480e63-ef59-4689-fe59-4c5a30744400/mobile640x480',
@@ -10,10 +11,47 @@ const imgCollection = [
     'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/02b53d3c-b68f-42cc-ffc4-9bc4792e6c00/mobile640x480',
     'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/e4c6ee8f-a1a0-412e-b56f-75b125621300/mobile640x480',
     'https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/8bcfa2be-2bc7-4bf7-1973-f984a919c700/mobile640x480'
-]
+];
+
+const metadata: MetadataProps = {
+  title: 'Voyageblur Gallery',
+  description: 'Voyablur gallery from our adventures',
+  keywords: ['travel', 'hiking', 'bikepacking'],
+  creator: 'Jakub Cezary Kolando',
+  publisher: 'Jakub Cezary Kolando',
+  metadataBase: new URL('https://voyageblur.com'),
+  alternates: {
+    canonical: '/gallery',
+    languages: {
+      en: '/en/gallery',
+      pl: '/pl/galeria'
+    },
+  },
+  openGraph: {
+    url: 'https://voyageblur.com',
+    title: 'Voyageblur - About',
+    description: 'About Voyageblur. Learn more about Voyageblur creation.',
+    // place og-image.png in public folder
+    image: 'https://voyageblur.com/og-image.png',
+  },
+   imagesToPreload: {
+   /*  remoteImages: [
+      {
+        href: "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/37aed710-e371-4714-0520-f51fcb57da00/hd1920x1080",
+        alt: "Background Image",
+        media: "(min-width: 640px)"
+      },
+      {
+        href: "https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/37aed710-e371-4714-0520-f51fcb57da00/hd1920x1080",
+        alt: "Background Image",
+        media: "(max-width: 639px)"
+      }
+    ] */
+  }
+};
 ---
 
-<MainLayout>
+<MainLayout metadata={metadata}>
     <div class="w-screen caret-transparent">
         {/* Hero */}
         <div 

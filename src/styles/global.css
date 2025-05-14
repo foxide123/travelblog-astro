@@ -43,6 +43,9 @@
     --color-custom-btn-border: #1B365D; 
     --color-custom-dark-blue: #1B365D;
     --color-custom-footer-blue: #061428;
+
+    --color-custom-light-blue: #333D4B;
+    --color-custom-accent: #1B365D;
 }
 
 @layer components {

@@ -81,7 +81,7 @@ const ogImage = openGraph?.image
 <!-- Preload Remote Images -->
 {
   imagesToPreload?.remoteImages?.map((image) => (
-    <link rel="preload" as={image.alt} href={image.href} media={image.media} />
+    <link rel="preload" as="image" href={image.href} media={image.media} />
   ))
 }
 

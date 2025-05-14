@@ -17,26 +17,27 @@ import { Stories } from '@/data/story_data';
     </h2>
     {/* Stories */}
     <div
-      class="border-2 border-green-500 w-full h-full mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+      class="w-full h-full mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
     >
       {
         Stories.map((story) => (
-          <div class={`w-full border-2 border-red-500`}>
+          <div class={`w-full`}>
             <img
               src={story.imgUrl}
               alt="Story Image"
-              width={451}
-              height={302}
-              class="rounded-2xl"
+              class="w-full aspect-video object-cover rounded-2xl"
               loading="lazy"
             />
             {/* Country name and reading duration */}
-            <div class="flex flex-row text-base font-medium">
-              <h3 class="font-normal text-base leading-[150%]">{story.country}</h3>
+            <div class="lg:px-0 pr-8 mt-4 flex flex-row justify-between text-base font-medium">
+              <div class="flex">
+                <img src="/map_icon.svg"/>
+                <h3 class="ml-2 font-normal text-base leading-[150%]">{story.country}</h3>
+              </div>
               <h3 class="font-normal text-base leading-[150%]">{story.read_time} min read</h3>
             </div>
-            <h2 class="font-semibold text-2xl">{story.title}</h2>
-            <h3 class="font-normal text-base text-custom-font-gray">
+            <h2 class="mt-4 font-semibold text-2xl">{story.title}</h2>
+            <h3 class="mt-2 font-normal text-base text-custom-font-gray">
               {story.description}
             </h3>
           </div>

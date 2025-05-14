@@ -98,14 +98,14 @@ const imgCollection = [
       const content = tooltip.querySelector('.content');
       const offset  = 8;
 
-      dot.addEventListener('mousemove', e => {
+      dot?.addEventListener('mousemove', e => {
         const rect = tooltip.getBoundingClientRect();
         content.style.left = (e.clientX - rect.left + offset) + 'px';
         content.style.top  = (e.clientY - rect.top  + offset) + 'px';
         content.classList.add('visible');
       });
 
-      dot.addEventListener('mouseleave', () => {
+      dot?.addEventListener('mouseleave', () => {
         content.classList.remove('visible');
       });
     }

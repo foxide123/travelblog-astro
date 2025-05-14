@@ -3,7 +3,7 @@ import SectionHighlight from "@/components/SectionHighlight.astro";
 
 
 ---
-<div class="relative border-2 border-red-500 lg:h-screen md:h-[75vh] caret-transparent w-screen flex justify-center items-center overflow-hidden">
+<div class="md:p-0 py-[40px] relative border-2 border-red-500 lg:h-screen md:h-[75vh] caret-transparent w-screen flex justify-center items-center overflow-hidden">
     {/* Bg Image */}
     <div 
     style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAolBMVEVHcEzf5ejZ4ubW3+TZ4+nw8O7K2+PF1+Lx7+ri6Ovy7ePQ3eXY2NDn6+3L2eLn5Nv18u7k4NfT3+fj49/S08rs7Ojv6t67wrzt7u3n6Obq5t0qNiXA1OG40N/Q2+JyfGjByMQxPCZ8hnbf3NOnsachLiPa5e2Xo5m0vLPKzsdJVUQZJiCRnJBBSziuyt6KlIQ6Ri5GUixfaFedqKHAwLGDi31MSYrPAAAAAXRSTlMAQObYZgAAAZlJREFUOMvdj1l2qzAQRIUMmBgwk5ksM0OYPSb731qqBZt47x50+KirrhZj/wLZ7QjO5zNOfuAm4Zu66auqD77Z/Z7dbhSec/Mg4dz3OVchfAMSjmcYOdhiLlNA+RfLsntGM6Bg9oGrCvFF2AQEysFR19GhqOom2HaSaJqWsH1HXacc9ZzLPLHJgMLkgjlS2n6vSMPETaSQkLDfz7HBYbufpqkdhomBCpchl6lp7k9QqSFFrrma67oM89GNSKbKPoCExDBoAr2+CYLgihPwQAmUVApGKEtcZlmN53lO4AUbV3kdXxgagARrtJpmyx3HuUZRdDrhM2TusjIeyrIcLxjkUE5IBxgny2Xtpy7jsYzjmCxIkUQKblM47P1+/9bxEG/GBY6HmivOKTJ+1oVV83Nai8dnIAEzJNjb8S7jWIs3hK4T01TXv8MQl7RKQ8+yxqFt26lbIcyzqMQqpvrRtkNMNZdyaD99/1nW14tVXSWE6Og3FfWy9O3P0Pb490tfCFGx6vV8dWJ+QqueaCrqx6MANc40zx37L/gDceo1mwD6goYAAAAASUVORK5CYII=');
@@ -11,21 +11,25 @@ import SectionHighlight from "@/components/SectionHighlight.astro";
     background-position: center;
     "
     class="fixed h-full w-full -z-10">
-        <img
-        src="https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/37aed710-e371-4714-0520-f51fcb57da00/hd1920x1080"
-        alt="hero background"
-        style={{ objectFit: "cover" }}
-        decoding="async"
-        sizes="100vw"
-        class="absolute inset-0 w-full h-full"
-      />
+    <picture>
+      <source media="(min-width: 640px)" srcset="https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/37aed710-e371-4714-0520-f51fcb57da00/hd1920x1080"/>
+      <img
+      src="https://imagedelivery.net/Ap_RIQMnvK_LYOq1vIFisQ/37aed710-e371-4714-0520-f51fcb57da00/mobile640x480"
+      alt="hero background"
+      style={{ objectFit: "cover" }}
+      fetchpriority="high"
+      decoding="async"
+      sizes="100vw"
+      class="absolute inset-0 w-full h-full"
+    />
+    </picture>
     </div>
 
     <div
       class={`lg:mb-10 lg:pt-10 border-2 border-green-500 flex justify-center items-center text-wrap h-full z-10 relative custom-section-width`}
     >
       {/* Middle Section */}
-      <div class="lg:h-auto lg:mt-20 px-20 flex flex-col justify-center items-center h-full">
+      <div class="lg:h-auto md:mt-20 md:px-20 flex flex-col justify-center items-center h-full">
         <SectionHighlight>Timeless Frames</SectionHighlight>
         <h1 class="lg:text-[72px] text-5xl font-bold leading-[115%] tracking-[-1%] text-center">
           Exploring the world, <br /> one blurry frame at the time
@@ -34,7 +38,7 @@ import SectionHighlight from "@/components/SectionHighlight.astro";
           A curated collection of analogy photography and travel stories from
           around the globe
         </h2>
-        <button class="mt-12 bg-custom-dark-blue py-4 px-8 rounded-custom-small text-white font-semibold text-xl leading-[140%] tracking-[-1%]">
+        <button class="md:mt-12 mt-8 bg-custom-dark-blue py-4 px-8 rounded-custom-small text-white font-semibold text-xl leading-[140%] tracking-[-1%]">
           Explore Stories
         </button>
       </div>
